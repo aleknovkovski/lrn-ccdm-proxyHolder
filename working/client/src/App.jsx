@@ -17,6 +17,11 @@ function App() {
 	function Post (props) {
 
 		const [isOpen, setIsOpen] = useState(false)
+		useEffect(()=>{
+			if(isOpen) {
+				console.log('the post is open now')
+			}
+		}, [isOpen])
 
 		return <div key={props.id} data-id={props.id}>
 			<h2 onClick={()=> setIsOpen(true)}>{props.title}</h2>
