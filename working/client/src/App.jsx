@@ -15,10 +15,17 @@ function App() {
 	}, [value])
 
 	function Post (props) {
+
+		const [isOpen, setIsOpen] = useState(false)
 		return <div key={props.id} data-id={props.id}>
 			<h2>{props.title}</h2>
+			{
+				isOpen ? "open"
+				: "closed"
+			}
 		</div>
 	}
+
 	return (
 		<div>
 			<a><h1>Hello World!</h1></a>
