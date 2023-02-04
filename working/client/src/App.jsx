@@ -42,8 +42,7 @@ function App() {
 				onChange={(e) => setValue(e.target.value)}
 			/>
 			<div>{data.map((item) => {
-				console.log(item)
-				return <Post id={item.id} title={item.title}/>
+				return <Post key={item.id} id={item.id} title={item.title}/>
 			})}</div>
 		</div>
 	)
