@@ -48,7 +48,7 @@ function App() {
 			<h2 onClick={()=> setIsOpen(true)}>{props.title}</h2>
 			{
 				isOpen ? openedMarkup
-				: "closed"
+				: "click title to read more"
 			}
 		</div>
 	}
