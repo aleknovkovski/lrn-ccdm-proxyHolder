@@ -14,6 +14,11 @@ function App() {
 			})
 	}, [value])
 
+	function Post (props) {
+		return <div key={props.id} data-id={props.id}>
+			<h2>{props.title}</h2>
+		</div>
+	}
 	return (
 		<div>
 			<a><h1>Hello World!</h1></a>
@@ -25,9 +30,7 @@ function App() {
 			/>
 			<div>{data.map((item) => {
 				console.log(item)
-				return <div key={item.id} data-id={item.id}>
-					<h2>{item.title}</h2>
-				</div>
+				return <Post id={item.id} title={item.title}/>
 			})}</div>
 		</div>
 	)
