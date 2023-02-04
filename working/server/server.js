@@ -9,6 +9,7 @@ async function proxyMiddleware(req, res, next) {
 	try {
 		const request = await fetch(url)
 		req.response = await request.json()
+		res.header('x-codedamn-project', 'jsonproxyholder')
 	}
 	catch (e) {
 		console.log(e)
