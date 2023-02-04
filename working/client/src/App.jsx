@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 
 function App() {
 	const [value, setValue] = useState('/posts')
-	const [data, setData] = useState('')
+	const [data, setData] = useState([])
 
 	useEffect(() => {
 		const API_URL = `http://${window.location.hostname}:1338${value}`
 		console.log(API_URL)
 		fetch(API_URL)
-			.then((t) => t.text())
+			.then((t) => t.json())
 			.then((data) => {
 				setData(data)
 			})
@@ -23,7 +23,13 @@ function App() {
 				value={value}
 				onChange={(e) => setValue(e.target.value)}
 			/>
-			<pre>{data}</pre>
+			<div>{data.map((item) => {
+				console.log(item)
+				return <div key={item.id} data-id={item.id}>
+					<h2>{item.title}</h2>
+					<p>{item.body}</p>
+				</div>
+			})}</div>
 		</div>
 	)
 }
