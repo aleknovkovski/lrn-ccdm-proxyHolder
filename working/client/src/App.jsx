@@ -17,8 +17,9 @@ function App() {
 	function Post (props) {
 
 		const [isOpen, setIsOpen] = useState(false)
+
 		return <div key={props.id} data-id={props.id}>
-			<h2>{props.title}</h2>
+			<h2 onClick={()=> setIsOpen(true)}>{props.title}</h2>
 			{
 				isOpen ? "open"
 				: "closed"
