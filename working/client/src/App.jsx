@@ -16,7 +16,7 @@ function App() {
 
 	return (
 		<div>
-			<h1>Hello World!</h1>
+			<a><h1>Hello World!</h1></a>
 			<input
 				type="text"
 				placeholder="write the relative URL here to get data"
@@ -27,7 +27,6 @@ function App() {
 				console.log(item)
 				return <div key={item.id} data-id={item.id}>
 					<h2>{item.title}</h2>
-					<p>{item.body}</p>
 				</div>
 			})}</div>
 		</div>
